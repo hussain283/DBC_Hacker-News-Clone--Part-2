@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   has_many :comments, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :comment_votes
+  has_many :post_votes
 
   def encrypt_password
     self.password = BCrypt::Password.create(self.password).to_s

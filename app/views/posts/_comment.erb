@@ -1,5 +1,7 @@
-<div class="comment">
+<div class="comment" data-id="<%= comment.id %>">
+  <button class="commentvote"  data-value="1">Like</button>
+  <button class="commentvote"  data-value="-1">Dislike</button>
   <p><%= comment.content %><br>
-    <a href="/users/<%= comment.user.id %>/show"><%= comment.user.name %></a>:<%= comment.created_at %>
+    <a href="/users/<%= comment.user.id %>/show"><%= comment.user.name %></a>:<%= comment.created_at %> : <span class="comment_score"><%= comment.score %></span>
   </p>
 </div>
